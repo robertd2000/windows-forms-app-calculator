@@ -45,6 +45,11 @@ namespace WindowsFormsAppCalculator
                 textBox1.Text = "";
             }
 
+            if (textBox1.Text.IndexOf(",") > 0 && B.Text == ",")
+            {
+                return;
+            }
+
             textBox1.Text += B.Text;
         }
 
@@ -78,11 +83,11 @@ namespace WindowsFormsAppCalculator
             {
                 return Convert.ToDouble(number1) - Convert.ToDouble(textBox1.Text);
             }
-            else if (Action == "*")
+            else if (Action == "×")
             {
                 return Convert.ToDouble(number1) * Convert.ToDouble(textBox1.Text);
             }
-            else if (Action == "/")
+            else if (Action == "÷")
             {
                // if (number1 != "0" && textBox1.Text != "0")
                     return Convert.ToDouble(number1) / Convert.ToDouble(textBox1.Text);
